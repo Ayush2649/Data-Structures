@@ -34,7 +34,7 @@ public class K_Levels{
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
-        int k = 2;
+        int k = 3;
         kLevel(root, 1, k);
     }
 }
