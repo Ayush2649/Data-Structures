@@ -123,16 +123,39 @@ public class BST_Operations{
         return isValid(root.left, min, max) && isValid(root.right, min, max);
     }
 
-    public static void main(String args[]){
-        int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
-        Node root = null;
-
-        for(int i = 0; i < values.length; i++){
-            root = insert(root, values[i]);
+    public static Node createMirror(Node root){
+        if(root == null){
+            return null;
         }
 
-        inOrder(root);
-        System.out.println();
+        Node leftMirror = createMirror(root.left);
+        Node rightMirror = createMirror(root.right);
+
+        root.left = rightMirror;
+        root.right = leftMirror;
+        return root;
+    }
+
+    public static void preOrder(Node root){
+        if(root == null){
+            return;
+        }
+
+        System.out.print(root.data + " ");
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+
+    public static void main(String args[]){
+        // int values[] = {8, 5, 3, 1, 4, 6, 10, 11, 14};
+        // Node root = null;
+
+        // for(int i = 0; i < values.length; i++){
+        //     root = insert(root, values[i]);
+        // }
+
+        // inOrder(root);
+        // System.out.println();
 
         // root = delete(root, 1);
         // System.out.println();
@@ -143,10 +166,21 @@ public class BST_Operations{
 
         // printRoot2Leaf(root, new ArrayList<>());
 
-        if(isValid(root, null, null)){
-            System.out.println("Valid BST");
-        } else {
-            System.out.println("Not a valid BST");
-        }
+        // if(isValid(root, null, null)){
+        //     System.out.println("Valid BST");
+        // } else {
+        //     System.out.println("Not a valid BST");
+        // }
+
+        Node root = new Node(8);
+        root.left = new Node(5);
+        root.right = new Node(10);
+        root.left.left = new Node(3);
+        root.left.right = new Node(6);
+        root.right.right = new Node(11);
+
+        root = createMirror(root);
+
+        preOrder(root);
     }
 }
