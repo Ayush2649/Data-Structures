@@ -66,6 +66,16 @@ public class Heaps_Properties{
     }
 
     public static void main(String args[]){
+          Heap h = new Heap();
+        
+        h.add(3);
+        h.add(4);
+        h.add(2);
+        h.add(1);
 
+        while(!h.isEmpty()){
+            System.out.println(h.peek());
+            h.remove();
+        }
     }
 }
