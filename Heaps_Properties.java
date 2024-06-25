@@ -43,6 +43,26 @@ public class Heaps_Properties{
                 heapify(minIdx);
             }
         }
+
+        public int remove(){
+            int data = arr.get(0);
+
+            // Step1 : Swap first and last
+            int temp = arr.get(0);
+            arr.set(0, arr.get(arr.size()-1));
+            arr.set(arr.size()-1, temp);
+
+            // Step2 : Delete last node
+            arr.remove(arr.size() - 1);
+
+            // Step3 : Heapify
+            heapify(0);
+            return data;
+        }
+
+        public boolean isEmpty(){
+        return arr.size() == 0;
+    }
     }
 
     public static void main(String args[]){
