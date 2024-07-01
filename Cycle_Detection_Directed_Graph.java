@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Cycle_Detection_Directed_Graph{
 
-    static class Edge{
+    static class Edge
         int src;
         int dest;
 
