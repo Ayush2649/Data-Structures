@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class AVL_Trees{
+public class AVL_Trees
 
     static class Node{
         int data, height;
