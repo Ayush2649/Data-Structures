@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class kruskal_Algorithm {
+public class Kruskal_Algorithm {
 
     static class Edge implements Comparable<Edge> {
         int src;
