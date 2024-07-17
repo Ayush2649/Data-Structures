@@ -2,7 +2,7 @@ import java.util.*;
 
 public class All_Patha_From_Source_To_Target{
 
-    static class Edge{
+    static class Edge
         int src;
         int dest;
 
