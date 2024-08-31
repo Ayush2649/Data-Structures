@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Zero_One_Knapsack_Memoization{
 
     public static int knapsack(int val[], int wt[], int W, int n,int dp[][]){
