@@ -1,17 +1,17 @@
 import java.util.*;
 public class delete_Nodes_From_Linked_List_Presnet_In_Array {
     
-    static class ListNode{
+    static class Node{
         int val;
-        ListNode next;
+        Node next;
 
-        ListNode(int val){
+        Node(int val){
         this.val = val;
         this.next = null;
         }
     }
 
-    public ListNode modifiedList(int[] nums, ListNode head){
+    public Node modifiedList(int[] nums, Node head){
         Set<Integer> valuesToRemove = new HashSet<>();
         for(int num : nums){
             valuesToRemove.add(num);
@@ -28,7 +28,7 @@ public class delete_Nodes_From_Linked_List_Presnet_In_Array {
         }
 
         // The actual current shifting
-        ListNode current = head;
+        Node current = head;
         while(current.next != null){
             if(valuesToRemove.contains(current.next.val)){
                 current.next = current.next.next;
